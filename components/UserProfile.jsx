@@ -5,7 +5,7 @@ import styles from "./../styles/Auth.module.css";
 
 const UserProfile = ({ setIsClicked }) => {
   return (
-    <div className="absolute right-4 top-16 bg-white dark:bg-[#050b2f] p-8 rounded-lg w-96">
+    <div className="absolute z-[999] right-4 top-16 bg-white dark:bg-[#050b2f] p-8 rounded-lg w-96">
       <div className="flex justify-between items-center">
         <p className="font-semibold text-lg text-custom_color">User Profile</p>
         <button
@@ -73,7 +73,6 @@ const UserProfile = ({ setIsClicked }) => {
                         name="password"
                         id="password"
                         required="required"
-                        value=""
                       />
                       <span className={``}>Old Password</span>
                       <i className="bg-custom_bg"></i>
@@ -85,7 +84,6 @@ const UserProfile = ({ setIsClicked }) => {
                         name="confirmPassword"
                         id="confirmPassword"
                         required="required"
-                        value=""
                       />
                       <span className={``}>New Password</span>
                       <i className="bg-custom_bg"></i>

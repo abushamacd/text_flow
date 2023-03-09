@@ -58,7 +58,7 @@ html {
 }
 
 .screen_70 {
-  height: 70vh;
+  height: 71vh;
 }
 
 .avatar.online:before {
@@ -73,7 +73,7 @@ html {
   top: 0%;
   right: 0%;
   box-shadow: none;
-  border: 5px double #00ebe7;
+  border: 5px double #55ca36;
   border-radius: 5px;
 }
 
