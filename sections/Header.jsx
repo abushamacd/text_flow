@@ -20,7 +20,7 @@ const Header = () => {
   const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <div className="bg-main-bg dark:bg-main-dark-bg  flex justify-between items-center border-b-[1px] border-b-[#00EBE7] py-1 px-3">
+    <div className="bg-main-bg dark:bg-main-dark-bg  flex justify-between items-center py-1 px-3">
       <div className="logo">
         {/* Mini Logo */}
         {/* <Image

@@ -20,3 +20,79 @@ h6 {
   font-family: "Gentium Book Plus", serif;
   font-weight: 400;
 }
+
+html {
+  --scrollbarBG: #1d2434;
+  --thumbBG: #00ebe7;
+  scroll-behavior: smooth;
+}
+
+.custom_scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
+.custom_scrollbar::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+.custom_scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+}
+
+.custom_scrollbar::-webkit-scrollbar:horizontal {
+  display: none;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+}
+
+.screen_92 {
+  height: 92vh;
+}
+
+.screen_70 {
+  height: 70vh;
+}
+
+.avatar.online:before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  display: block;
+  --tw-bg-opacity: 1;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  right: 0%;
+  box-shadow: none;
+  border: 5px double #00ebe7;
+  border-radius: 5px;
+}
+
+.avatar.offline:before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  display: block;
+  --tw-bg-opacity: 1;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  right: 0%;
+  box-shadow: none;
+  border: 5px double #ffb2b2;
+  border-radius: 5px;
+}
+
+[data-theme="night"] {
+  --rounded-btn: 0.3rem;
+}
