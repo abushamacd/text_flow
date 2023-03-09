@@ -2,6 +2,7 @@ import React from "react";
 import { MdOutlineCancel } from "react-icons/md";
 import { FaUserEdit } from "react-icons/fa";
 import styles from "./../styles/Auth.module.css";
+import Image from "next/image";
 
 const UserProfile = ({ setIsClicked }) => {
   return (
@@ -17,11 +18,16 @@ const UserProfile = ({ setIsClicked }) => {
         </button>
       </div>
       <div className="flex gap-5 items-center mt-6 border-color border-b-1 pb-6">
-        <img
-          className="rounded-full h-24 w-24"
-          src="https://i.ibb.co/MgsTCcv/avater.jpg"
-          alt="user-profile"
-        />
+        <div className="avatar">
+          <div className="w-[100px] rounded-lg">
+            <Image
+              src={`https://i.ibb.co/MgsTCcv/avater.jpg`}
+              width={100}
+              height={100}
+              alt="active user"
+            />
+          </div>
+        </div>
         <div>
           <p className="font-semibold text-xl dark:text-custom_color">
             {" "}

@@ -53,11 +53,16 @@ const Header = () => {
           className="flex items-center gap-2 cursor-pointer p-1 hover:bg-secondary-dark-bg rounded-lg"
           onClick={() => setIsClicked(!isClicked)}
         >
-          <img
-            className="rounded-full w-8 h-8"
-            src="https://i.ibb.co/MgsTCcv/avater.jpg"
-            alt="user-profile"
-          />
+          <div className="avatar">
+            <div className="w-[30px] rounded-lg">
+              <Image
+                src={`https://i.ibb.co/MgsTCcv/avater.jpg`}
+                width={50}
+                height={50}
+                alt="active user"
+              />
+            </div>
+          </div>
           <div className="flex">
             <span className="text-[16px]">Hi,</span>{" "}
             <p className="font-medium ml-1 text-[16px] text-custom_color">

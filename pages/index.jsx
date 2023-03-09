@@ -1,9 +1,9 @@
-import ActiveUser from "@/components/ActiveUser";
-import ChatList from "@/components/ChatList";
+import ActiveUser from "@/components/ActiveFrnd";
+import ChatList from "@/components/FrndList";
 import CustomHead from "@/components/CustomHead";
 import Media from "@/components/Media";
 import Search from "@/components/Search";
-import UserDetails from "@/components/UserDetails";
+import UserDetails from "@/components/FriendDetails";
 
 export default function Home() {
   return (
