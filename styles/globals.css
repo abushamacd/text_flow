@@ -101,4 +101,10 @@ html {
 
 [data-theme="night"] {
   --rounded-btn: 0.3rem;
+  --rounded-box: 0.3rem;
+}
+
+.emoji {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
 }
