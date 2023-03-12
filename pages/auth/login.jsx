@@ -10,17 +10,15 @@ const Login = () => {
     <>
       <CustomHead title={"Sign In"} />
       <div
-        className={`flex justify-evenly items-center h-screen	bg-main-bg dark:bg-main-dark-bg text-custom_color`}
+        className={`flex justify-evenly items-center h-screen bg-main-dark-bg text-custom_color`}
       >
         <div className="logo">
           <Image width={200} height={200} alt="logo" src={logo} />
         </div>
         <div
-          className={`${styles.box} bg-main-bg dark:bg-secondary-dark-bg h-[420px] before:h-[420px] after:h-[420px]`}
+          className={`${styles.box} bg-secondary-dark-bg h-[420px] before:h-[420px] after:h-[420px]`}
         >
-          <div
-            className={`${styles.content} bg-main-bg dark:bg-secondary-dark-bg`}
-          >
+          <div className={`${styles.content} bg-secondary-dark-bg`}>
             <div className="py-6 px-6 lg:px-8">
               <h3 className="mb-4 text-xl font-medium text-center">Sign In</h3>
               <div className="form flex flex-col">

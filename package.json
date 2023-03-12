@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "colors": "^1.4.0",
     "daisyui": "^2.51.3",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
     "moment": "^2.29.4",
+    "mongoose": "^7.0.1",
     "next": "13.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",

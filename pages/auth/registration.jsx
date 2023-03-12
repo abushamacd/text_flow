@@ -10,17 +10,15 @@ const Registration = () => {
     <>
       <CustomHead title={"Sign Up"} />
       <div
-        className={`flex justify-evenly items-center h-screen	bg-main-bg dark:bg-main-dark-bg text-custom_color`}
+        className={`flex justify-evenly items-center h-screen	 bg-main-dark-bg text-custom_color`}
       >
         <div className="logo">
           <Image width={200} height={200} alt="logo" src={logo} />
         </div>
         <div
-          className={`${styles.box} bg-main-bg dark:bg-secondary-dark-bg h-[600px] before:h-[600px] after:h-[600px]`}
+          className={`${styles.box}  bg-secondary-dark-bg h-[600px] before:h-[600px] after:h-[600px]`}
         >
-          <div
-            className={`${styles.content} bg-main-bg dark:bg-secondary-dark-bg`}
-          >
+          <div className={`${styles.content}  bg-secondary-dark-bg`}>
             <div className="py-6 px-6 lg:px-8">
               <h3 className="mb-1 text-xl font-medium text-center">Sign Up</h3>
               <div className="form flex flex-col">
@@ -89,7 +87,7 @@ const Registration = () => {
                       className={`file flex flex-col justify-center items-center`}
                     >
                       <label
-                        className={`cursor-pointer dark:bg-main-dark-bg px-4 py-2 rounded-lg`}
+                        className={`cursor-pointer bg-main-dark-bg px-4 py-2 rounded-lg`}
                         htmlFor="image"
                       >
                         Upload Image

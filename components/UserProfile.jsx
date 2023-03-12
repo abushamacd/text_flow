@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const UserProfile = ({ setIsClicked }) => {
   return (
-    <div className="absolute z-[999] right-4 top-16 bg-white dark:bg-[#050b2f] p-8 rounded-lg w-96">
+    <div className="absolute z-[999] right-4 top-16 bg-[#050b2f] p-8 rounded-lg w-96">
       <div className="flex justify-between items-center">
         <p className="font-semibold text-lg text-custom_color">User Profile</p>
         <button
@@ -29,15 +29,9 @@ const UserProfile = ({ setIsClicked }) => {
           </div>
         </div>
         <div>
-          <p className="font-semibold text-xl dark:text-custom_color">
-            {" "}
-            Abu Shama
-          </p>
-          <p className="text-gray-500 text-sm dark:text-gray-400">
-            {" "}
-            Super Admin{" "}
-          </p>
-          <p className="text-white text-sm font-semibold dark:text-gray-400">
+          <p className="font-semibold text-xl text-custom_color"> Abu Shama</p>
+          <p className="text-gray-500 text-sm text-gray-400"> Super Admin </p>
+          <p className="text-white text-sm font-semibold text-gray-400">
             {" "}
             contact@imshama.com{" "}
           </p>
@@ -58,14 +52,12 @@ const UserProfile = ({ setIsClicked }) => {
       <input type="checkbox" id="my-modal-4" className="modal-toggle" />
       <label htmlFor="my-modal-4" className="modal cursor-pointer">
         <div
-          className={`flex justify-evenly items-center p-4 rounded-lg	bg-main-bg dark:bg-main-dark-bg text-custom_color`}
+          className={`flex justify-evenly items-center p-4 rounded-lg	 bg-main-dark-bg text-custom_color`}
         >
           <div
-            className={`${styles.box} bg-main-bg dark:bg-secondary-dark-bg h-[400px] before:h-[400px] after:h-[400px]`}
+            className={`${styles.box}  bg-secondary-dark-bg h-[400px] before:h-[400px] after:h-[400px]`}
           >
-            <div
-              className={`${styles.content} bg-main-bg dark:bg-secondary-dark-bg`}
-            >
+            <div className={`${styles.content}  bg-secondary-dark-bg`}>
               <div className="py-6 px-6 lg:px-8">
                 <h3 className="mb-1 text-xl font-medium text-center">
                   Update Profile
@@ -110,7 +102,7 @@ const UserProfile = ({ setIsClicked }) => {
                         className={`file flex flex-col justify-center items-center`}
                       >
                         <label
-                          className={`cursor-pointer dark:bg-main-dark-bg px-4 py-2 rounded-lg`}
+                          className={`cursor-pointer bg-main-dark-bg px-4 py-2 rounded-lg`}
                           htmlFor="image"
                         >
                           Upload Image
