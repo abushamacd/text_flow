@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 // Schema Design
 const userSchema = new Schema(
@@ -85,5 +85,5 @@ userSchema.methods.logger = function () {
 };
 
 // Model Create
-const User = model("users", userSchema);
+const User = models.users || model("users", userSchema);
 export default User;
