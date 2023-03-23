@@ -9,7 +9,7 @@ export default function handler(req, res) {
       dataControllers.getUser(req, res);
       break;
     case "POST":
-      res.status(200).json({ name: "POST" });
+      dataControllers.saveUser(req, res);
       break;
     case "PUT":
       res.status(200).json({ name: "PUT" });

@@ -1,14 +1,61 @@
 import CustomHead from "@/components/CustomHead";
+import { usePostUserMutation } from "@/redux/features/api/userApiSlice";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Auth.module.css";
 import logo from "./../../public/images/logo.png";
 
 const Registration = () => {
+  const [inputData, setInputData] = useState({
+    userName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    image: "",
+  });
+
+  const [loadImage, setLoadImage] = useState("");
+  const [postUser, { isLoading, isSuccess, data }] = usePostUserMutation();
+
+  const inputHandle = (e) => {
+    setInputData({
+      ...inputData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const fileHandle = (e) => {
+    if (e.target.files.length !== 0) {
+      setInputData({
+        ...inputData,
+        [e.target.name]: e.target.files[0],
+      });
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      setLoadImage(reader.result);
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  };
+
+  const register = (e) => {
+    e.preventDefault();
+    const { userName, email, password, image, confirmPassword } = inputData;
+    const formData = new FormData();
+
+    formData.append("userName", userName);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("confirmPassword", confirmPassword);
+    formData.append("image", image);
+    postUser(formData);
+  };
+
   return (
     <>
-      <CustomHead title={"Sign Up"} />
+      <CustomHead title="Sign Up" />
       <div
         className={`flex justify-evenly items-center h-screen	 bg-main-dark-bg text-custom_color`}
       >
@@ -22,7 +69,7 @@ const Registration = () => {
             <div className="py-6 px-6 lg:px-8">
               <h3 className="mb-1 text-xl font-medium text-center">Sign Up</h3>
               <div className="form flex flex-col">
-                <form className="space-y-6 flex flex-col">
+                <form onSubmit={register} className="space-y-6 flex flex-col">
                   <div className={`${styles.inputBox}`}>
                     <input
                       className={``}
@@ -30,7 +77,8 @@ const Registration = () => {
                       name="userName"
                       id="userName"
                       required="required"
-                      value=""
+                      value={inputData.userName}
+                      onChange={inputHandle}
                     />
                     <span className={``}>Username</span>
                     <i className="bg-custom_bg"></i>
@@ -42,7 +90,8 @@ const Registration = () => {
                       name="email"
                       id="email"
                       required="required"
-                      value=""
+                      value={inputData.email}
+                      onChange={inputHandle}
                     />
                     <span className={``}>Email</span>
                     <i className="bg-custom_bg"></i>
@@ -54,7 +103,8 @@ const Registration = () => {
                       name="password"
                       id="password"
                       required="required"
-                      value=""
+                      value={inputData.password}
+                      onChange={inputHandle}
                     />
                     <span className={``}>Password</span>
                     <i className="bg-custom_bg"></i>
@@ -66,7 +116,8 @@ const Registration = () => {
                       name="confirmPassword"
                       id="confirmPassword"
                       required="required"
-                      value=""
+                      value={inputData.confirmPassword}
+                      onChange={inputHandle}
                     />
                     <span className={``}>Confirm Password</span>
                     <i className="bg-custom_bg"></i>
@@ -77,11 +128,19 @@ const Registration = () => {
                     <div
                       className={`image w-[50px] h-[50px] rounded-full border overflow-hidden`}
                     >
-                      <img
-                        className={`w-full h-full object-cover `}
-                        src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
-                        alt="userPhoto"
-                      />
+                      {loadImage ? (
+                        <img
+                          className={`w-full h-full object-cover `}
+                          src={loadImage}
+                          alt="userPhoto"
+                        />
+                      ) : (
+                        <img
+                          className={`w-full h-full object-cover`}
+                          src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
+                          alt="userPhoto"
+                        />
+                      )}
                     </div>
                     <div
                       className={`file flex flex-col justify-center items-center`}
@@ -95,8 +154,9 @@ const Registration = () => {
                       <input
                         className={`hidden`}
                         type="file"
-                        name="image"
                         id="image"
+                        name="image"
+                        onChange={fileHandle}
                       />
                     </div>
                     <i className="bg-custom_bg"></i>
