@@ -3,7 +3,7 @@ import { Schema, model, models } from "mongoose";
 // Schema Design
 const userSchema = new Schema(
   {
-    name: {
+    userName: {
       type: String,
       required: [true, "Please provide a your name"],
       trim: true,

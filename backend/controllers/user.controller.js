@@ -23,9 +23,7 @@ export async function getUser(req, res, next) {
 // Save API
 export async function saveUser(req, res, next) {
   try {
-    const reqData = req.body;
-    console.log(reqData);
-    const result = await saveUserService(reqData);
+    const result = await saveUserService(req);
     res.status(200).json({
       success: true,
       message: `Data save successfully`,

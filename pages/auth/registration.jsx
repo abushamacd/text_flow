@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import styles from "../../styles/Auth.module.css";
 import logo from "./../../public/images/logo.png";
+import { toast } from "react-toastify";
 
 const Registration = () => {
   const [inputData, setInputData] = useState({
@@ -16,7 +17,11 @@ const Registration = () => {
   });
 
   const [loadImage, setLoadImage] = useState("");
-  const [postUser, { isLoading, isSuccess, data }] = usePostUserMutation();
+  const [postUser, { isLoading, isSuccess, data, reset }] =
+    usePostUserMutation();
+  if (isSuccess) {
+    toast(`${data.data.userName} is saved`);
+  }
 
   const inputHandle = (e) => {
     setInputData({
@@ -50,7 +55,17 @@ const Registration = () => {
     formData.append("password", password);
     formData.append("confirmPassword", confirmPassword);
     formData.append("image", image);
+
     postUser(formData);
+    // if (isSuccess) {
+    setInputData({
+      userName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      image: "",
+    });
+    // }
   };
 
   return (

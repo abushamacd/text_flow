@@ -20,11 +20,17 @@ const UserProfile = ({ setIsClicked }) => {
       <div className="flex gap-5 items-center mt-6 border-color border-b-1 pb-6">
         <div className="avatar">
           <div className="w-[100px] rounded-lg">
-            <Image
-              src={`https://i.ibb.co/MgsTCcv/avater.jpg`}
+            {/* <Image
+              src={`http://localhost:3000/public/uploads/1679635731027-Screenshot.png`}
               width={100}
               height={100}
               alt="active user"
+            /> */}
+            <img
+              width={100}
+              height={100}
+              src="./public/uploads/1679635731027-Screenshot.png"
+              alt=""
             />
           </div>
         </div>
