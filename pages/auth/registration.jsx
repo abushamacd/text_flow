@@ -17,10 +17,14 @@ const Registration = () => {
   });
 
   const [loadImage, setLoadImage] = useState("");
-  const [postUser, { isLoading, isSuccess, data, reset }] =
+  const [postUser, { isLoading, isSuccess, isError, data, reset }] =
     usePostUserMutation();
-  if (isSuccess) {
-    toast(`${data.data.userName} is saved`);
+
+  if (data?.data?.message) {
+    toast(`${data.data.message}`);
+  }
+  if (isSuccess && !data?.data?.message) {
+    toast(`Dear ${data.data.userName}, Welcome to TextFlow`);
   }
 
   const inputHandle = (e) => {
@@ -49,6 +53,10 @@ const Registration = () => {
     e.preventDefault();
     const { userName, email, password, image, confirmPassword } = inputData;
     const formData = new FormData();
+    if (password !== confirmPassword) {
+      toast.error(`Password is not match`);
+      return;
+    }
 
     formData.append("userName", userName);
     formData.append("email", email);
